@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap');
+
+$PublicSans: 'Public Sans', sans-serif;
+// default font size 18px
+
+$primary--100: hsl(233, 26%, 24%);
+$primary--200: hsl(136, 65%, 51%);
+$primary--300: hsl(192, 70%, 51%);
+
+$neutral--100: hsl(233, 8%, 62%);
+$neutral--200: hsl(220, 16%, 96%);
+$neutral--300: hsl(0, 0%, 98%);
+$neutral--400: hsl(0, 0%, 100%);
+
+// // btn background
+// background: rgb(49,211,92);
+// background: linear-gradient(90deg, rgba(49,211,92,1) 0%, rgba(43,183,218,1) 100%);
+
+body {
+	font-family: $PublicSans;
+	overflow-x: hidden;
+}
+
+.customBtn {
+	background: rgb(49, 211, 92);
+	background: linear-gradient(
+		90deg,
+		rgba(49, 211, 92, 1) 0%,
+		rgba(43, 183, 218, 1) 100%
+	);
+	color: $neutral--400;
+}
+
+// Header
+.navLinks {
+	position: relative;
+	color: $neutral--100;
+	transition: all 0.2s ease-in;
+	cursor: pointer;
+
+	&:hover {
+		color: $primary--100;
+		opacity: 1;
+	}
+
+	&::before {
+		transition: 300ms;
+		height: 5px;
+		content: '';
+		position: absolute;
+		background: rgb(49, 211, 92);
+		background: linear-gradient(
+			90deg,
+			rgba(49, 211, 92, 1) 0%,
+			rgba(43, 183, 218, 1) 100%
+		);
+	}
+}
+
+.navGrow {
+	&::before {
+		height: 0%;
+		width: 100%;
+		bottom: -170%;
+	}
+
+	&:hover {
+		&::before {
+			height: 5px;
+		}
+	}
+}
+
+// Body
+.hero {
+	background-color: $neutral--300;
+
+	&__img {
+		background-image: url('../images/bg-intro-desktop.svg');
+		background-position: center;
+		background-size: cover;
+		width: 100%;
+		height: 100%;
+
+		@media screen and (max-width: 500px) {
+			background-image: url('../images/bg-intro-mobile.svg');
+			background-position: center;
+			background-size: cover;
+			width: 100%;
+			height: 30rem;
+		}
+	}
+}
+
+.cta {
+	background-color: $neutral--200;
+}
+
+.article {
+	background-color: $neutral--300;
+
+	&__content {
+		&--title {
+			transition: all 0.5s ease-in-out;
+
+			&:hover {
+				background: rgb(49, 211, 92);
+				background: linear-gradient(
+					90deg,
+					rgba(49, 211, 92, 1) 0%,
+					rgba(43, 183, 218, 1) 100%
+				);
+				color: transparent;
+				background-clip: text;
+			}
+		}
+	}
+}
+
+.footerBg {
+	background-color: $primary--100;
+
+	&__links {
+		transition: all 0.5s ease-in-out;
+
+		&:hover {
+			color: $primary--200;
+		}
+	}
+}
