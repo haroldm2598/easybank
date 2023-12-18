@@ -19,10 +19,14 @@ $neutral--400: hsl(0, 0%, 100%);
 // // btn background
 // background: rgb(49,211,92);
 // background: linear-gradient(90deg, rgba(49,211,92,1) 0%, rgba(43,183,218,1) 100%);
-
+html,
+body {
+	overflow-x: hidden;
+}
 body {
 	font-family: $PublicSans;
-	overflow-x: hidden;
+
+	position: relative;
 }
 
 .customBtn {
@@ -86,12 +90,16 @@ body {
 		width: 100%;
 		height: 100%;
 
-		@media screen and (max-width: 500px) {
+		@media screen and (max-width: 786px) {
 			background-image: url('../images/bg-intro-mobile.svg');
 			background-position: center;
 			background-size: cover;
 			width: 100%;
 			height: 30rem;
+		}
+
+		@media screen and (min-width: 600px) and (max-width: 786px) {
+			margin-bottom: 15rem;
 		}
 	}
 }

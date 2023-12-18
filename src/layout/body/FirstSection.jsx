@@ -18,7 +18,7 @@ function Index() {
 			</section>
 
 			{/* image and background */}
-			<section className='hero__img order-1 md:order-2 md:mb-0 relative top-[-1rem] right-0 md:top-[-5rem]  md:right-[-10rem] z-30'>
+			<section className='hero__img order-1 md:order-2 mb-[5rem] lg:mb-0 relative top-[-1rem] right-0 md:top-[-5rem]  md:right-[-10rem] z-30'>
 				<img
 					src={BgImg}
 					alt='Mock ups'
